@@ -1,7 +1,7 @@
-# Strategic Customer Churn Prediction & Revenue Retention Optimization
+# Strategic Customer Churn Prediction & Revenue Retention Optimisation
 ## Project Overview:
-Customer churn poses a significant threat to long-term profitability in subscription-based models. This project delivers an end-to-end machine learning solution designed to identify high-risk customers with **91.4% sensitivity** (i.e Recall - ability to catch max possible churners). By leveraging advanced Gradient Boosting (XGBoost) and Bayesian Optimization, this pipeline provides actionable insights that allow for proactive retention, potentially saving significant revenue.
-** Key Achievement**: Realised an **11% model performance uplift** through automated hyperparameter tuning and sophisticated class-imbalance handling.
+Customer churn poses a significant threat to long-term profitability in subscription-based models. This project delivers an end-to-end machine learning solution designed to identify high-risk customers with **91.4% sensitivity** (i.e Recall - ability to catch max possible churners). By leveraging advanced Gradient Boosting (XGBoost) and Bayesian Optimization, this pipeline provides actionable insights that allow for proactive retention, potentially saving significant revenue.<br>
+**Key Achievement**: Realised an **11% model performance uplift** through automated hyperparameter tuning and sophisticated class-imbalance handling.
 
 ________________________________________
 ## 1. Data Engineering & Quality Assurance
@@ -26,24 +26,31 @@ I benchmarked three high-performance algorithms: **Decision Trees, LightGBM, and
         •	**Artifacts:** The final model was serialized and versioned within the MLflow Model Registry for seamless deployment.
 ________________________________________
 ## 4.  Performance & Statistical Metrics
-    The model was tuned to prioritize Recall, ensuring that the **business catches as many at-risk customers as possible**.
-| Metric          | Score    | Technical Significance                 | Business Value                                                                               |
-|-----------------|----------|----------------------------------------|------------------------------------------------|
-| **Recall**      |   91.4%  |  High sensitivity via scale_pos_weight |   Identifies 9 out of 10 potential churners.   |
-| **ROC-AUC**     |   85%    |  Excellent discriminative power        |   Effectively ranks customers by risk level.   |
-| **F1 Score**    |   0.59   |  Harmonic mean of Precision/Recall     |   Balanced performance for targeted outreach.  |
-| **Inference Time**  |  24ms    |  Low latency prediction                |   Enables real-time churn triggers in CRM.     |
+    The model was tuned to prioritize Recall, ensuring that the **business catches as many at-risk customers as possible**.<br>
+|**Metric**|**Score**|**Technical Significance**|**Business Value**|
+|----|----|----|----|
+|**Recall**|91.4|Highly sensitivity via scale-pos_weight|Identifies 9 out of 10 churners|
+|**ROC-AUC**|85%|Excellent discriminative power|Effectively ranks customers by risk level|
+|**F1 Score**|0.59|Harmonic mean of Precision/Recall|Balanced performance for targeted outreach|
+|**Inference Time**|24ms|Low latency prediction|Enables real-time churn triggers in CRM|
 
-    The "Optimal Threshold" Strategy
-    Through a precision-recall sweep, I adjusted the decision boundary to 0.3.
-        •	Why? In churn prediction, the cost of a "False Negative" (losing a customer) is far higher than a "False Positive" (sending a discount to a loyal customer). 
-            My strategy prioritizes coverage to maximize revenue retention.
-        •	The AUC (Area Under the Curve) represents the probability that the model will rank a random positive (churner) higher than a random negative (non-churner). 
-            A score of 1.0 is perfect, and 0.5 is no better than a coin flip. The higher the ROC-AUC value the better the model performance.
+    The "Optimal Threshold" Strategy - Through a precision-recall sweep, I adjusted the decision boundary to 0.3.<br>
+        •  Why? In churn prediction, the cost of a "False Negative" (losing a customer) is far higher than a "False Positive" (sending a discount to a loyal customer). 
+            My strategy prioritizes coverage to maximize revenue retention.<br>
+        •  The AUC (Area Under the Curve) represents the probability that the model will rank a random positive (churner) higher than a random negative (non-churner).<br>
+            A score of 1.0 is perfect, and 0.5 is no better than a coin flip. The higher the ROC-AUC value the better the model performance.
 ________________________________________
 ## 5. Business Value & Conclusion
 The final model provides a prioritised list of customers likely to churn.<br>
     •	**High-Risk Identification:** By capturing 91.4% of churners, the marketing team can now focus on high-probability saves.<br>
     •	**Operational Efficiency:** With a training time of only 0.36 seconds, the model can be retrained frequently as customer behavior evolves.<br>
     •	**Proactive Strategy:** The integration of probability-based thresholds allows for "tiered" retention—offering bigger incentives to those with the highest churn probability.
+
+________________________________________
+## Technical Stack:
+Languages: Python (Pandas, NumPy, Scikit-Learn)<br>
+    •	**Modeling:** XGBoost, LightGBM, Random Forest<br>
+    •	**Optimization:** Optuna (Bayesian Search)<br>
+    •	**MLOps:** MLflow (Tracking & Registry)<br>
+    •	**Visualization:** Matplotlib, Seaborn, WordCloud  
 
