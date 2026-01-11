@@ -1,7 +1,7 @@
 # Strategic Customer Churn Prediction & Revenue Retention Optimisation
 ## Project Overview:
 Customer churn poses a significant threat to long-term profitability in subscription-based models. This project delivers an end-to-end machine learning solution designed to identify high-risk customers with **91.4% sensitivity** (i.e Recall - ability to catch max possible churners). By leveraging advanced Gradient Boosting (XGBoost) and Bayesian Optimization, this pipeline provides actionable insights that allow for proactive retention, potentially saving significant revenue.<br>
-**Key Achievement**: Realised an **11% model performance uplift** through automated hyperparameter tuning and sophisticated class-imbalance handling.
+**Key Result**: Achieved an **11% uplift** in model performance through advanced hyperparameter optimisation, leading to a more efficient allocation of marketing resources.
 
 ________________________________________
 ## 1. Data Engineering & Quality Assurance
